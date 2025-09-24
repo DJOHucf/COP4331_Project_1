@@ -1,0 +1,26 @@
+
+<html>
+	<head>
+		<title>Sign Up</title>
+		<script type="text/javascript" src="js/md5.js"></script>
+		<script type="text/javascript" src="js/code.js"></script>
+		<link href="css/styles.css" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+	</head>
+	<body>
+		<h1 id="title">Sign Up</h1>
+
+		<div id="loginDiv">
+			<span id="inner-title">CREATE AN ACCOUNT</span> <br />
+			<input type="text" id="loginName" placeholder="Create a username"/> <br />
+			<input type="password" id="loginPassword" placeholder="Create a password"/> <br />
+			<button type="button" id="registerButton" class="buttons" onclick="doRegister();"> Register </button>
+			<span id="loginResult"></span>
+		</div> <br />
+
+		<div id="registerDiv">
+			<span id="inner-title">ALREADY HAVE AN ACCOUNT?</span> <br />
+			<button onclick="location.href='https://cop4331-team-9.com/login.html'" type="button"> Log In </button> <br />
+		</div>
+	</body>
+</html>
