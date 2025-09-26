@@ -1,8 +1,13 @@
 <?php
 	$inData = getRequestInfo();
 	
+  // Resend all data when updating. This can be done with a popup that automatically populates fields with the current data
 	$id = $inData["ID"];
-
+	$firstName = $inData["firstName"];
+	$lastName = $inData["lastName"];
+	$phone = $inData["phone"];
+	$email = $inData["email"];
+	
 	$conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331", "COP4331");
 	if ($conn->connect_error) 
 	{
@@ -10,10 +15,10 @@
 	} 
 	else
 	{
-		$stmt = $conn->prepare("DELETE FROM Contacts WHERE ID = ?");
-		$stmt->bind_param("i", $id);
+		$stmt = $conn->prepare("UPDATE Contacts SET FirstName=?, LastName=?, Phone=?, Email=? WHERE ID = ?");
+		$stmt->bind_param("ssssi", $firstName, $lastName, $phone, $email, $id);
 		if(!($stmt->execute())){
-			echo "Error deleting record";
+			echo "Error updating record";
 		}
 		$stmt->close();
 		$conn->close();
