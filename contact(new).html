@@ -1,0 +1,96 @@
+<!DOCTYPE html> 
+<html lang = "en">
+<head>
+	<title>Contacts Creator!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
+    <script type="text/javascript" src="js/md5.js"></script> 
+    <script type="text/javascript" src="js/code.js"></script>
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+	<script>
+		document.addEventListener('DOMContentLoaded', function() 
+		{
+			checkLogin();
+		}, false);
+	</script>
+</head>
+<body>
+    <div class="title-container">
+        <h1>Contacts Manager!</h1>
+    </div>
+
+<div id="loggedInDiv">
+	<span id="userName"></span><br />
+	<button type="button" id="logoutButton" class="buttons" onclick="doLogout();"> Log Out </button>
+</div>
+
+<div id="accessUIDiv">
+	<br />
+
+	<input type="text" id="searchText" placeholder="Start typing contact name to search..." />
+	<button type="button" id="searchContactButton" class="buttons" onclick="searchContact();">
+		Search Contact
+	</button>
+	<br />
+	<span id="contactSearchResult"></span>
+	<br /><br />
+
+	<input type="text" id="firstNameText" placeholder="First Name" />
+	<input type="text" id="lastNameText" placeholder="Last Name" />
+	<input type="text" id="emailText" placeholder="Email Address" />
+	<input type="text" id="phoneNumber" placeholder="Phone Number" 
+		maxlength = "10"
+		oninput = "this.value = this.value.replace(/[^0-9]/g, '');"
+		placeholder = "Enter 10-digit phone number!"/>
+		
+	<button type="button" id="registerContactButton" class="buttons" onclick="addContact();">
+		Add Contact
+	</button>
+	<br />
+	<span id="registerContact"></span>
+
+	<table>
+		<thead>
+			<tr>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Email Address</th>
+				<th>Phone Number</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody id="contactsTableBody">
+			
+		</tbody>
+	</table>
+</div>
+<div id="editModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeEditModal()">&times;</span>
+    <h2>Edit Contact</h2>
+    <form id="editForm" onsubmit="saveContactEdits(event)">
+      <input type="hidden" id="editContactId">
+      
+      <label>First Name:</label>
+      <input type="text" id="editFirstName" required>
+      
+      <label>Last Name:</label>
+      <input type="text" id="editLastName" required>
+      
+      <label>Email:</label>
+      <input type="email" id="editEmail">
+      
+      <label>Phone:</label>
+      <input type="text" id="editPhone"
+		maxlength = "10"
+		oninput = "this.value = this.value.replace(/[^0-9]/g, '');"
+		placeholder = "Enter 10-digit phone number!"/>
+	  >
+      <button type="submit" class="buttons">Save Changes</button>
+    </form>
+  </div>
+</div>
+
+</body>
+</html>
