@@ -776,3 +776,4 @@ function deleteContact(contactId) {
 		alert("Connection error: " + err.message);
 	}
 }
+
