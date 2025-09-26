@@ -1,30 +1,74 @@
 body {
-    background-color: lightblue;
+    background-image: url('/images/trybackground2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'Playfair Display', serif; 
+    font-style: italic;
+    font-weight: bold;
 }
 
 #title {
-    font-size: 60px; 
+    font-size: 70px;
     width: 100%;
-    margin: 3% auto 2% auto; 
+    margin: 2% auto 1% auto; 
     text-align: center;
-    font-family: 'Dancing Script', 'Brush Script MT', cursive;
-    color:rgb(120, 29, 85);
+    font-family: 'Playfair Display', serif; 
+    font-style: italic;
+    color: #17489c64;
     font-weight: bold; 
 }
 
+/* Title container styling */
+.title-container {
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.title-container h1 {
+    font-family: 'Playfair Display', serif; 
+    font-size: 48px;
+    font-style: italic;
+    font-weight: bold;
+    color: #000;
+    margin: 0;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+    background: linear-gradient(135deg, rgba(203, 238, 243, 0.7), rgba(244, 156, 187, 0.6));
+    padding: 15px 35px;
+    border-radius: 50px;
+    backdrop-filter: blur(8px);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 25px rgba(136, 13, 30, 0.2);
+    display: inline-block;
+}
+
+/* Login page styling */
 #loginDiv {
-    font-size: 18px;
-    width: 500px;  
-    height: 500px; 
-    margin: 50px auto;
-    padding: 50px;  
-    background-color: lemonchiffon;
+    font-size: 22px;  
+    width: 450px;  
+    height: 450px; 
+    margin: 0 auto 20px auto; 
+    padding: 60px 40px 40px 40px;
+    background: linear-gradient(135deg, rgba(203, 238, 243, 0.95), rgba(241, 156, 187, 0.85));
     border-radius: 50%; 
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; /
-    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    align-items: center; 
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3), 0 8px 32px rgba(242, 106, 141, 0.2);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    z-index: 5;
 }
 
 .tab-buttons {
@@ -37,26 +81,28 @@ body {
 
 .tab-button {
     flex: 1;
-    padding: 8px 12px; 
+    padding: 10px 14px; 
     border: none;
     background-color: #f1f1f1;
     cursor: pointer;
-    font-size: 14px; 
-    font-family: 'Ubuntu', 'Times New Roman', Times, serif;
+    font-size: 16px; 
+    font-family: 'Playfair Display', serif; 
+    font-weight: bold;
+    font-style: italic;
     transition: background-color 0.3s;
 }
 
 .tab-button.active {
-    background-color: #ec3faa;
+    background-color: #DD2D4A;
     color: white;
 }
 
 .tab-button:hover {
-    background-color: #0976a5;
+    background-color: #F49CBB;
 }
 
 .tab-button.active:hover {
-    background-color: #d63f90;
+    background-color: #880D1E;
 }
 
 .tab-panel {
@@ -69,115 +115,313 @@ body {
     display: block;
 }
 
+/* Logged in user section */
 #loggedInDiv {
-    font-size: 30px;
-    width: 70%;
-    margin-left: 15%;
-    padding: 25px;
-    background-color: #b2b2b2;
-}
-
-#accessUIDiv {
-    font-size: 30px;
-    width: 70%;
-    margin-left: 15%;
-    padding: 25px;
-    background-color: #b2b2b2;
-}
-
-.buttons {
-    font-size: 16px; 
+    font-size: 24px;
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(203, 238, 243, 0.8);
     border-radius: 25px;
-    width: 60%; 
+    text-align: center;
+    backdrop-filter: blur(8px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 25px rgba(136, 13, 30, 0.2);
+}
+
+/* Main UI container */
+#accessUIDiv {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(8px);
+    border-radius: 20px;
+    padding: 30px;
+    width: 90%;
+    max-width: 800px;
+    margin: 30px auto;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+/* Button styling */
+.buttons {
+    font-size: 18px; 
+    border-radius: 25px;
+    width: 65%; 
+    max-width: 300px;
     margin: 12px auto;
-    font-family: 'Ubuntu', 'Times New Roman', Times, serif;
-    padding: 10px 16px; 
-    border: 2px solid #ccc;
-    background-color: white;
+    display: block;
+    font-family: 'Playfair Display', serif; 
+    font-weight: bold;
+    font-style: italic;
+    padding: 12px 18px; 
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
     cursor: pointer;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-.buttons:hover{
-    background-color: #119ed698;
-    color: #FFFFFF;
-    opacity: 50%;
+.buttons:hover {
+    background: linear-gradient(135deg, #DD2D4A, #F26A8D);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(221, 45, 74, 0.3);
 }
 
-#loginName { 
-    font-size: 18px; 
-} 
-
-#loginPassword { 
-    font-size: 18px; 
-} 
-
-#registerLogin { 
-    font-size: 18px; 
-} 
-
-#registerPassword { 
-    font-size: 18px; 
-}
-
-input[type="text"], input[type="password"]{
+/* Input field styling */
+input[type="text"], 
+input[type="password"] {
     border-radius: 25px;
     text-align: center;
     width: 75%; 
+    max-width: 400px;
     margin: 10px auto;
     display: block;
-    padding: 10px;
-    font-family: 'Ubuntu', 'Times New Roman', Times, serif;
-    font-size: 14px;
-    border: 2px solid #ddd;
-}
-
-#inner-title{
-    display: block;
+    padding: 12px;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
     font-size: 16px;
-    width: 90%;
-    text-align: center;
-    margin: 0 auto 20px auto; 
-    font-family: 'Ubuntu', 'Times New Roman', Times, serif;
-    color: #37a4db;
+    border: 2px solid #ddd;
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
-#loginResult{
+/* Result message styling */
+#loginResult, #registerResult, #contactSearchResult, #contactAddResult, #registerContact {
     display: block;
     font-size: 14px;
     width: 90%;
+    max-width: 500px;
     text-align: center;
     margin: 15px auto;
-    font-family: 'Ubuntu', 'Times New Roman', Times, serif;
-    color: #17489c64;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: bold;
+    min-height: 20px;
 }
 
-#registerResult{
-    display: block;
-    font-size: 14px;
-    width: 90%;
-    text-align: center;
-    margin: 15px auto;
-    font-family: 'Ubuntu', 'Times New Roman', Times, serif;
-    color: #e64975;
-}
-
-#userName{
+/* Username display */
+#userName {
     display: inline-block;
-    width: 80%;
-    margin-left: 10%;
+    font-weight: bold;
+    color: #000;
+    font-size: 24px; 
+    white-space: nowrap; 
+}
+
+/* Table styling */
+table {
+    width: 95%;
+    margin: 30px auto;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    overflow: hidden;
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    font-style: italic;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+th {
+    background: linear-gradient(135deg, #F49CBB, #DD2D4A);
+    color: white;
+    font-size: 16px;
+}
+
+td {
+    font-size: 14px;
+    color: #333;
+}
+
+/* Action buttons in table */
+.action-btn {
+    padding: 6px 12px;
+    margin: 2px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 11px;
+    transition: all 0.3s ease;
+}
+
+.edit-btn {
+    background: #4CAF50;
+    color: white;
+}
+
+.edit-btn:hover {
+    background: #45a049;
+    transform: translateY(-1px);
+}
+
+.delete-btn {
+    background: #f44336;
+    color: white;
+}
+
+.delete-btn:hover {
+    background: #da190b;
+    transform: translateY(-1px);
+}
+
+/* Contact list paragraph styling (for old structure) */
+#contactList {
+    margin: 20px auto;
     text-align: center;
+    min-height: 100px;
 }
 
-#logoutButton{
-    width: 20%;
-    margin-left: 40%;
+#contactList table {
+    margin: 10px auto;
 }
 
-select{
-    width: 30%;
-    margin-left: 35%;
-    margin-top: 2%;
-    font-size: 0.75em;
-    font-family: 'Ubuntu', 'Times New Roman', Times, serif;
+/* Section headers */
+h3 {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: bold;
+    color: #DD2D4A;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.6)
+}
+
+.modal-content {
+    background: linear-gradient(135deg, rgba(203, 238, 243, 0.95), rgba(244, 156, 187, 0.9));
+    margin: 10% auto; 
+  padding: 20px;
+  border-radius: 20px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 8px 25px rgba(136, 13, 30, 0.3);
+  text-align: center;
+}
+
+/* Close button */
+.close-btn {
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #880D1E;
+}
+
+.close-btn:hover {
+  color: black;
+}
+
+.modal-content label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: bold;
+}
+
+.modal-content input {
+  width: 90%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+    .title-container h1 {
+        font-size: 36px;
+        padding: 12px 25px;
+    }
+    
+    #loggedInDiv {
+        width: 95%;
+        font-size: 20px;
+        padding: 15px;
+    }
+    
+    #accessUIDiv {
+        width: 95%;
+        padding: 20px;
+        margin: 20px auto;
+    }
+    
+    .buttons {
+        width: 80%;
+        font-size: 16px;
+        padding: 12px;
+    }
+    
+    input[type="text"], 
+    input[type="password"] {
+        width: 85%;
+        padding: 12px;
+        font-size: 16px;
+    }
+    
+    table {
+        font-size: 12px;
+    }
+    
+    th, td {
+        padding: 8px;
+    }
+    
+    .action-btn {
+        padding: 4px 8px;
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .title-container h1 {
+        font-size: 28px;
+        padding: 10px 20px;
+    }
+    
+    #accessUIDiv {
+        width: 98%;
+        padding: 15px;
+    }
+    
+    .buttons {
+        width: 90%;
+        font-size: 14px;
+    }
+    
+    input[type="text"], 
+    input[type="password"] {
+        width: 90%;
+        padding: 10px;
+    }
+    
+    table {
+        font-size: 11px;
+    }
+    
+    th, td {
+        padding: 6px;
+    }
+    
+    .action-btn {
+        padding: 3px 6px;
+        font-size: 9px;
+    }
 }
