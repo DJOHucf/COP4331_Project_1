@@ -212,9 +212,9 @@ function openTab(evt, tabName) {
 }
 
 function addContact() {
-	let firstNameElement = document.getElementById("firstNameText");
-	let lastNameElement = document.getElementById("lastNameText");
-	
+	let firstNameElement = document.getElementById("addFirstName");
+	let lastNameElement = document.getElementById("addLastName");
+
 	if (firstNameElement && lastNameElement) {
 		addContactMultiField();
 	} else {
@@ -223,10 +223,10 @@ function addContact() {
 }
 
 function addContactMultiField() {
-	let firstName = document.getElementById("firstNameText").value.trim();
-	let lastName = document.getElementById("lastNameText").value.trim();
-	let emailAddress = document.getElementById("emailText").value.trim();
-	let phoneNumber = document.getElementById("phoneNumber").value.trim();
+	let firstName = document.getElementById("addFirstName").value.trim();
+	let lastName = document.getElementById("addLastName").value.trim();
+	let emailAddress = document.getElementById("addEmail").value.trim();
+	let phoneNumber = document.getElementById("addPhone").value.trim();
 	
 	let resultElement = document.getElementById("registerContact");
 	if (resultElement) {
@@ -309,6 +309,8 @@ function addContactMultiField() {
 
 		// If no duplicates found, proceed with creation
 		createContactRecord(firstName, lastName, emailAddress, phoneNumber);
+		closeAddModal();
+		searchContact(); // refresh list
 	});
 }
 
@@ -777,3 +779,10 @@ function deleteContact(contactId) {
 	}
 }
 
+function closeAddModal() {
+    document.getElementById("addModal").style.display = "none";
+}
+
+function openAddModal() {
+    document.getElementById("addModal").style.display = "block";
+}
