@@ -71,6 +71,12 @@ body {
     z-index: 5;
 }
 
+div#registerName {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .tab-buttons {
     display: flex;
     margin-bottom: 20px;
