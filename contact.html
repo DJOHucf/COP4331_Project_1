@@ -26,16 +26,25 @@
 </div>
 
 <div id="accessUIDiv">
-	<br />
+	<br>
 
-	<input type="text" id="searchText" placeholder="Start typing contact name to search..." />
-	<button type="button" id="searchContactButton" class="buttons" onclick="searchContact();">
+	<div class="searchbar-container">
+    	<input type="text" id="searchText" placeholder="Start typing contact name to search...">
+    	<button type="button" id="searchContactButton" class="buttons" onclick="searchContact();">
 		Search Contact
-	</button>
-	<br />
-	<span id="contactSearchResult"></span>
-	<br /><br />
+		</button></div>
+	<br>
+	<!-- <span id="contactSearchResult"></span><br> -->
+	<br>
 
+	<div class="separator">
+		<hr class="hr-left">
+		<span class="hr-text">OR</span>
+		<hr class="hr-right">
+	</div>
+	<br>
+
+	<!--
 	<input type="text" id="firstNameText" placeholder="First Name" />
 	<input type="text" id="lastNameText" placeholder="Last Name" />
 	<input type="text" id="emailText" placeholder="Email Address" />
@@ -48,7 +57,11 @@
 		Add Contact
 	</button>
 	<br />
-	<span id="registerContact"></span>
+	-->
+	
+	<button type="button" id="addContactButton" class="buttons" onclick="openAddModal();">
+		Add Contact
+	</button>
 
 	<table>
 		<thead>
@@ -82,15 +95,37 @@
       <input type="email" id="editEmail">
       
       <label>Phone:</label>
-      <input type="text" id="editPhone"
-		maxlength = "10"
-		oninput = "this.value = this.value.replace(/[^0-9]/g, '');"
-		placeholder = "Enter 10-digit phone number!"/>
-	  >
+      <input type="text" id="editPhone">
+      
       <button type="submit" class="buttons">Save Changes</button>
     </form>
   </div>
+
+
 </div>
+<div id="addModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeAddModal()">&times;</span>
+    <h2>Add Contact</h2>
+
+      <label>First Name:</label>
+      <input type="text" id="addFirstName" required>
+      
+      <label>Last Name:</label>
+      <input type="text" id="addLastName" required>
+      
+      <label>Email:</label>
+      <input type="email" id="addEmail">
+
+      <label>Phone:</label>
+      <input type="text" id="addPhone">
+	
+	  <span id="registerContact"></span>
+      
+	  <button type="button" id="registerContactButton" class="buttons" onclick="addContact();">
+		Done
+	  </button>
+  </div>
 
 </body>
 </html>
