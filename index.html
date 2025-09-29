@@ -1,13 +1,19 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Contact Manager</title>
-    <script type = "text/javascript" src="js/md5.js"> </script> 
-    <script type ="text/javascript" src = "js/code.js">  </script>
+    <title>Contacts Creator!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="js/md5.js"></script> 
+    <script type="text/javascript" src="js/code.js"></script>
     <link href="css/styles.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1 id ="title"> Contact Manager</h1> 
+    <!-- Curved text container -->
+    <div class="title-container">
+        <h1>Contacts Manager!</h1>
+    </div>
+    <!-- Login/Register circle -->
     <div id="loginDiv">
         <div class="tab-buttons">
             <button class="tab-button active" onclick="openTab(event, 'loginTab')">Log In</button>
@@ -17,15 +23,19 @@
         <div id="loginTab" class="tab-panel active">
             <span id="inner-title">PLEASE LOG IN</span>
             <input type="text" id="loginName" placeholder="Username" /><br />
-            <input type="password" id="loginPassword" placeholder="Password"/><br />
+            <input type="password" id="loginPassword" placeholder="Password" /><br />
             <button type="button" id="loginButton" class="buttons" onclick="doLogin();">Log In</button>
             <span id="loginResult"></span>
         </div>
         
         <div id="registerTab" class="tab-panel">
             <span id="inner-title">CREATE ACCOUNT</span>
-            <input type="text" id="registerLogin" placeholder="Username" /><br />
-            <input type="password" id="registerPassword" placeholder="Password"/><br />
+            <div id="registerName">
+                <input type="text" id="registerFirst" placeholder="First Name" />   
+                <input type="text" id="registerLast" placeholder="Last Name" />
+            </div>
+            <input type="text" id="registerLogin" placeholder="Username" />
+            <input type="password" id="registerPassword" placeholder="Password" /><br />
             <button type="button" id="registerButton" class="buttons" onclick="doRegister();">Register</button>
             <span id="registerResult"></span>
         </div>
