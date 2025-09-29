@@ -15,6 +15,8 @@
 	
 	$login = $inData["login"];
 	$password = $inData["password"];
+  $firstName = $inData["firstName"];
+	$lastName = $inData["lastName"];
 	
 	// Basic validation
 	if (empty($login) || empty($password)) {
@@ -43,19 +45,17 @@
 		{
 			$stmt->close(); // Close the SELECT statement first
 			
-			// Insert new user with empty firstName and lastName, plain text password
-			$stmt = $conn->prepare("INSERT INTO Users (firstName, lastName, Login, Password) VALUES ('', '', ?, ?)");
-			$stmt->bind_param("ss", $login, $password); // Store password as plain text
+			// Insert new user with firstName and lastName, plain text password
+			$stmt = $conn->prepare("INSERT into Users (firstName,lastName,login,password) VALUES(?,?,?,?)");
+  		$stmt->bind_param("ssss", $firstName, $lastName, $login, $password);
 			
-			if( $stmt->execute() )
-			{
-				$newUserId = $conn->insert_id;
-				returnWithInfo( "", "", $newUserId );
-			}
-			else
+			if( !$stmt->execute() )
 			{
 				returnWithError("Failed to create user: " . $stmt->error);
 			}
+      else{
+        returnWithError("");
+      }
 		}
 
 		$stmt->close();
