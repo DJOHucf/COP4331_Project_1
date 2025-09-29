@@ -63,6 +63,9 @@ function doLogin() {
 function doRegister() {
 	let login = document.getElementById("registerLogin").value;
 	let password = document.getElementById("registerPassword").value;
+	let first = document.getElementById("registerFirst").value.trim();
+	let last = document.getElementById("registerLast").value.trim();
+
 	
 	document.getElementById("registerResult").innerHTML = "";
 	
@@ -70,13 +73,18 @@ function doRegister() {
 		document.getElementById("registerResult").innerHTML = "Please enter both username and password";
 		return;
 	}
-	
+
+	if (first === "" || last === "") {
+		document.getElementById("registerResult").innerHTML = "Please enter both first and last name";
+		return;
+	}
+
 	if (password.length < 6) {
 		document.getElementById("registerResult").innerHTML = "Password must be at least 6 characters long";
 		return;
 	}
-	
-	let tmp = {login:login,password:password};
+
+	let tmp = {login:login,password:password, firstName:first, lastName:last};
 	let jsonPayload = JSON.stringify(tmp);
 	
 	let url = 'LAMPAPI/Register.' + extension;
@@ -791,4 +799,3 @@ function openAddModal() {
 	document.getElementById("addPhone").value = "";
 	document.getElementById("registerContact").innerHTML = "";
 }
-
