@@ -785,4 +785,10 @@ function closeAddModal() {
 
 function openAddModal() {
     document.getElementById("addModal").style.display = "block";
+	document.getElementById("addFirstName").value = "";
+	document.getElementById("addLastName").value = "";
+	document.getElementById("addEmail").value = "";
+	document.getElementById("addPhone").value = "";
+	document.getElementById("registerContact").innerHTML = "";
 }
+
