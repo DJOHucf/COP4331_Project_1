@@ -86,8 +86,10 @@ function doRegister() {
 
 	let tmp = {login:login,password:password, firstName:first, lastName:last};
 	let jsonPayload = JSON.stringify(tmp);
+	console.log("Register payload:", jsonPayload);
 	
-	let url = 'LAMPAPI/Register.' + extension;
+	// Use full base URL to avoid relative path issues
+	let url = urlBase + '/LAMPAPI/Register.' + extension;
 	
 	let xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
@@ -95,29 +97,32 @@ function doRegister() {
 	
 	try {
 		xhr.onreadystatechange = function() {
-			if (this.readyState == 4 && this.status == 200) {
-				let jsonObject = JSON.parse(xhr.responseText);
-				
-				if (jsonObject.error === "" || jsonObject.error === null) {
-					document.getElementById("registerResult").innerHTML = "Registration successful! You can now log in.";
-					document.getElementById("registerResult").style.color = "green";
-					
-					document.getElementById("registerLogin").value = "";
-					document.getElementById("registerPassword").value = "";
-					
-					setTimeout(() => {
-						let loginTab = document.querySelector('[onclick*="login"]');
-						if (loginTab) {
-							loginTab.click();
-						}
-					}, 2000);
+			if (this.readyState == 4) {
+				console.log("Register response (status):", this.status, "body:", xhr.responseText);
+				if (this.status == 200) {
+					let jsonObject = JSON.parse(xhr.responseText);
+					if (jsonObject.error === "" || jsonObject.error === null) {
+						document.getElementById("registerResult").innerHTML = "Registration successful! You can now log in.";
+						document.getElementById("registerResult").style.color = "green";
+						
+						document.getElementById("registerLogin").value = "";
+						document.getElementById("registerPassword").value = "";
+						document.getElementById("registerFirst").value = "";
+						document.getElementById("registerLast").value = "";
+						
+						setTimeout(() => {
+							let loginTab = document.querySelector('[onclick*="login"]');
+							if (loginTab) {
+								loginTab.click();
+							}
+						}, 2000);
+					} else {
+						document.getElementById("registerResult").innerHTML = jsonObject.error;
+						document.getElementById("registerResult").style.color = "#880D1E";
+					}
 				} else {
-					document.getElementById("registerResult").innerHTML = jsonObject.error;
-					document.getElementById("registerResult").style.color = "#880D1E";
+					document.getElementById("registerResult").innerHTML = "Server error: " + this.status;
 				}
-			}
-			else if (this.readyState == 4) {
-				document.getElementById("registerResult").innerHTML = "Server error: " + this.status;
 			}
 		};
 		xhr.send(jsonPayload);
