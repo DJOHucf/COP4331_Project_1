@@ -131,16 +131,90 @@ body {
 
 /* Main UI container */
 #accessUIDiv {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(203, 238, 243, 0.8);
     backdrop-filter: blur(8px);
     border-radius: 20px;
-    padding: 30px;
-    width: 90%;
-    max-width: 800px;
+    padding: 20px;
+    width: 80%;
+    /* max-width: 800px; */
     margin: 30px auto;
     text-align: center;
     box-shadow: 0 20px 60px rgba(0,0,0,0.2);
     border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.searchbar-container {
+    display: flex
+;
+    justify-content: center;
+    align-items: center;
+}
+
+.separator {
+    position: relative;
+    width: 100%;
+}
+
+button#addContactButton {
+    max-width: unset;
+    width: 90%;
+}
+
+hr.hr-left, hr.hr-right {
+    line-height: 1em;
+    position: absolute;
+    outline: 0;
+    top: 0;
+    left: 0;
+    border: 0;
+    color: #000;
+    text-align: center;
+    height: 1.5em;
+    opacity: .5;
+    width: 100%;
+}
+
+hr {
+    display: block;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    color: gray;
+    unicode-bidi: isolate;
+    overflow: hidden;
+    border-style: inset;
+    border-width: 1px;
+}
+
+hr.hr-left:before {
+    content: "";
+    background: linear-gradient(90deg, transparent, red);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 47%;
+    height: 2px;
+}
+
+hr.hr-right:before {
+    content: "";
+    background: linear-gradient(90deg, red, transparent);
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 47%;
+    height: 2px;
+}
+
+span.hr-text {
+    position: relative;
+    display: block;
+    padding: 0 .5em;
+    line-height: 1.5em;
+    color: red;
+    text-align: center;
+    top: .5em;
 }
 
 /* Button styling */
@@ -174,8 +248,8 @@ input[type="text"],
 input[type="password"] {
     border-radius: 25px;
     text-align: center;
-    width: 75%; 
-    max-width: 400px;
+    width: 60%;
+    max-width: 800px;
     margin: 10px auto;
     display: block;
     padding: 12px;
@@ -344,6 +418,8 @@ h3 {
   border: 1px solid #ccc;
 }
 
+
+
 /* Mobile Responsive Styles */
 @media screen and (max-width: 768px) {
     .title-container h1 {
@@ -425,3 +501,4 @@ h3 {
         font-size: 9px;
     }
 }
+
