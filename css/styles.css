@@ -8,7 +8,7 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    font-family: 'Playfair Display', serif; 
+    font-family: 'Trebuchet MS'; 
     font-style: italic;
     font-weight: bold;
 }
@@ -18,7 +18,7 @@ body {
     width: 100%;
     margin: 2% auto 1% auto; 
     text-align: center;
-    font-family: 'Playfair Display', serif; 
+    font-family: 'Trebuchet MS'; 
     font-style: italic;
     color: #17489c64;
     font-weight: bold; 
@@ -35,7 +35,7 @@ body {
 }
 
 .title-container h1 {
-    font-family: 'Playfair Display', serif; 
+    font-family: 'Trebuchet MS'; 
     font-size: 48px;
     font-style: italic;
     font-weight: bold;
@@ -92,7 +92,7 @@ div#registerName {
     background-color: #f1f1f1;
     cursor: pointer;
     font-size: 16px; 
-    font-family: 'Playfair Display', serif; 
+    font-family: 'Trebuchet MS'; 
     font-weight: bold;
     font-style: italic;
     transition: background-color 0.3s;
@@ -231,7 +231,7 @@ span.hr-text {
     max-width: 300px;
     margin: 12px auto;
     display: block;
-    font-family: 'Playfair Display', serif; 
+    font-family: 'Trebuchet MS'; 
     font-weight: bold;
     font-style: italic;
     padding: 12px 18px; 
@@ -259,7 +259,7 @@ input[type="password"] {
     margin: 10px auto;
     display: block;
     padding: 12px;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Trebuchet MS';
     font-style: italic;
     font-size: 16px;
     border: 2px solid #ddd;
@@ -274,7 +274,7 @@ input[type="password"] {
     max-width: 500px;
     text-align: center;
     margin: 15px auto;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Trebuchet MS';
     font-style: italic;
     font-weight: bold;
     min-height: 20px;
@@ -297,7 +297,7 @@ table {
     background: rgba(255, 255, 255, 0.95);
     border-radius: 15px;
     overflow: hidden;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Trebuchet MS';
     font-weight: bold;
     font-style: italic;
     box-shadow: 0 8px 25px rgba(0,0,0,0.1);
@@ -327,7 +327,7 @@ td {
     border: none;
     border-radius: 15px;
     cursor: pointer;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Trebuchet MS';
     font-weight: bold;
     font-style: italic;
     font-size: 11px;
@@ -367,7 +367,7 @@ td {
 
 /* Section headers */
 h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Trebuchet MS';
     font-style: italic;
     font-weight: bold;
     color: #DD2D4A;
