@@ -251,7 +251,7 @@ span.hr-text {
 
 /* Input field styling */
 input[type="text"], 
-input[type="password"]
+input[type="password"],
 input[type = "email"]{
     border-radius: 25px;
     text-align: center;
@@ -510,5 +510,6 @@ h3 {
         font-size: 9px;
     }
 }
+
 
 
